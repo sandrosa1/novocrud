@@ -12,7 +12,8 @@ class App {
      * Responsavel pela criação das rotas e URL amigaveis
      */
     function __construct(){
-        print_r($url = $this->parseURL()) ;
+        $url = $this->parseURL();
+        //print_r($url);
 
         /**
          * Se existir o atributo, controler recebe o atributo
