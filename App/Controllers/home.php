@@ -3,12 +3,20 @@
 use \App\Core\Controller;
 class Home extends Controller {
 
+    /**
+     * Método responsável por levar os dados para home/index
+     *
+     * @param string $nome
+     * @return void
+     */
     public function index($nome = ''){
-        $user = $this->model('User');
-        $user->nome = $nome;
-        //$user->email = $email;
 
-        $this->view('home/index', ['nome' => $user->nome]);
+        $note = $this->model('Note');
+        $dados = $note->getAll();
+
+       
+
+        $this->view('home/index',$dados);
 
     }
 }
