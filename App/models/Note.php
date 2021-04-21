@@ -23,5 +23,25 @@ class Note extends Model{
             return []; 
         }
     }
+    /**
+     * Método que busca o id selecionado no Banco
+     *
+     * @param string $id
+     * @return array 
+     */
+    public function findId($id){
+
+        $sql = 'SELECT * FROM notes WHERE id = ?';
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }else{
+            return []; 
+        }
+    }
 
 }
