@@ -7,6 +7,9 @@
     <title>Fatec Crud PHP</title>
 </head>
 <body>
+       
+        <h2>Bloco de anotações</h2>
+        <a href="/">Home</a> | <a href="/notes/criar">Criar bloco</a>
         <?php require_once '../App/views/'.$view.'.php'; ?>
 </body>
 </html>

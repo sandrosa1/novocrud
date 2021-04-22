@@ -5,6 +5,9 @@ use App\Core\Model;
  */
 class Note extends Model{
 
+        public $titulo;
+        public $texto;
+
     /**
      * Método que traz os dados do banco se  houver
      *
@@ -43,5 +46,25 @@ class Note extends Model{
             return []; 
         }
     }
+
+    public function save(){
+
+        $sql = "INSERT INTO notes (titulo, texto) VALUES (?,?)";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $this->titulo);
+        $stmt->bindValue(2, $this->texto);
+
+        if($stmt->execute())
+        {
+            return "Cadastrado com sucesso!";
+        }
+        else
+        {
+            return "Erro ao cadastrar.";
+        }
+    }
+
+
+
 
 }
