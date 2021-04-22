@@ -47,6 +47,7 @@ class Note extends Model{
         }
     }
 
+
     public function save(){
 
         $sql = "INSERT INTO notes (titulo, texto) VALUES (?,?)";
@@ -65,6 +66,21 @@ class Note extends Model{
     }
 
 
+    public function delete($id){
+
+        $sql = "DELETE FROM notes WHERE id = ?";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+
+        if($stmt->execute())
+        {
+            return "Excluido com sucesso!";
+        }
+        else
+        {
+            return "Erro ao excluir.";
+        }
+    }
 
 
 }

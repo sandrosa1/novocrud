@@ -12,11 +12,12 @@ class Home extends Controller {
     public function index($nome = ''){
 
         $note = $this->model('Note');
+        
         $dados = $note->getAll();
 
        
 
-        $this->view('home/index',$dados);
+        $this->view('home/index',$dados = ['registros' => $dados]);
 
     }
 }
