@@ -34,14 +34,57 @@ class Notes extends Controller {
          */
         if(isset($_POST['cadastrar'])){
             
-            $note = $this->model('Note');
-            $note->titulo =  $_POST['titulo'];
-            $note->texto  =  $_POST['texto'];
+            if(empty($_POST['titulo'])){
+                $mensagem[] = "O campo titulo não pode estar vazio";
 
-            $mensagem[] = $note->save();
+            }elseif(empty($_POST['texto'])){
+                $mensagem[] = "O campo texto não pode estar vazio";
+
+            }else{
+                $note = $this->model('Note');
+                $note->titulo =  $_POST['titulo'];
+                $note->texto  =  $_POST['texto'];
+
+                $mensagem[] = $note->save();
+
+            }
+
         }
         $this->view('notes/criar', $dados = ['mensagem' => $mensagem]);
         
+    }
+
+
+
+    public function editar($id){
+
+        $mensagem = array();
+        $note = $this->model('Note');
+
+            
+            /**
+             * Se houver ação envai para view
+             */
+        if(isset($_POST['atualizar'])){
+            
+            if(empty($_POST['titulo'])){
+                $mensagem[] = "O campo titulo não pode estar vazio";
+
+            }elseif(empty($_POST['texto'])){
+                $mensagem[] = "O campo texto não pode estar vazio";
+
+            }else{
+                $note->titulo =  $_POST['titulo'];
+                $note->texto  =  $_POST['texto'];
+
+                $mensagem[] = $note->update($id);
+
+            }
+
+        }
+        $dados = $note->findId($id);
+
+        $this->view('notes/editar', $dados = ['mensagem' => $mensagem, 'registros' => $dados]);
     }
 
     /**
@@ -64,5 +107,8 @@ class Notes extends Controller {
 
 
     }
+
+
+
 
 }
