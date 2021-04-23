@@ -9,7 +9,19 @@
 <body>
        
         <h2>Bloco de anotações</h2>
-        <a href="/">Home</a> | <a href="/notes/criar">Criar bloco</a>
+        <a href="/">Home</a> | <a href="/notes/criar">Criar bloco</a>  | 
+
+        <?php if(!isset($_SESSION['logado'])): ?>
+        
+            <a href="/home/login">Login</a> 
+
+        <?php else: ?>
+        Olá <?php echo $_SESSION['userNome']; ?>
+            <a href="/home/logout">Logout</a> 
+
+        <?php endif; ?>
+
+
         <?php require_once '../App/views/'.$view.'.php'; ?>
 </body>
 </html>
