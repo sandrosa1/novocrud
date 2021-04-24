@@ -1,6 +1,7 @@
 <?php
 
 use \App\Core\Controller;
+use \App\Auth;
 
 class Notes extends Controller {
 
@@ -26,6 +27,8 @@ class Notes extends Controller {
      * @return void
      */
     public function criar(){
+
+        Auth::checkLogin();
 
         $mensagem = array();
         
@@ -57,6 +60,8 @@ class Notes extends Controller {
 
 
     public function editar($id){
+
+        Auth::checkLogin();
 
         $mensagem = array();
         $note = $this->model('Note');
@@ -94,6 +99,8 @@ class Notes extends Controller {
      * @return void
      */
     public function excluir($id = ''){
+
+        Auth::checkLogin();
 
         $mensagem = array();
 

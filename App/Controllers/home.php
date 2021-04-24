@@ -23,6 +23,20 @@ class Home extends Controller {
 
     }
 
+    public function buscar(){
+
+        $busca = isset($_POST['search']) ? $_POST['search'] : $_SESSION['search'];
+        $_SESSION['search'] = $busca;
+        $note = $this->model('Note');
+        $dados = $note->search($busca);
+
+    
+        $this->view('home/index', $dados = ['registros' => $dados]);
+
+    }
+
+
+
     public function login(){
 
         $mensagem = array();
@@ -41,5 +55,10 @@ class Home extends Controller {
         
         $this->view('home/login',$dados = ['mensagem' => $mensagem ]);
 
+    }
+
+    public function logout(){
+        
+      return Auth::Logout();
     }
 }

@@ -1,11 +1,11 @@
 <?php
 namespace App;
 
-use App\Core\Model;
+use \App\Core\Model;
 
 class Auth{
 
-    public static function  login($email, $senha){
+    public static function  Login($email, $senha){
         $sql = "SELECT * FROM users WHERE email = ?";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $email);
@@ -29,19 +29,19 @@ class Auth{
 
     }
 
-    public function logout() {
+    public static function Logout() {
 
         session_destroy();
         header('Location: /home/login');
 
-        
     }
 
-    public function checkLogin() {
+    public static function checkLogin() {
 
         if(!isset($_SESSION['logado'])){
 
-            header('Location: /home/index');
+            header('Location: /home/login');
+            die;
 
         }
     }

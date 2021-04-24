@@ -57,4 +57,15 @@ class App {
     public function parseURL(){
         return explode ('/',filter_var($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'],FILTER_SANITIZE_URL));
     }
+
+    public function currentUrl(){
+        $url = $this->parseURL();
+        if($url[1] == "" AND !isset($url[2])){
+            $url[1] = "home";
+            $url[2] = "index";
+        }
+        return  URL_BASE."/".$url[1]."/".$url[2]."/";
+    }
+
+
 }

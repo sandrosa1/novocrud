@@ -101,5 +101,20 @@ class Note extends Model{
         }
     }
 
+    public function search($search){
+
+        $sql = "SELECT * FROM notes WHERE titulo LIKE  ? COLLATE utf8_general_ci";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, "%{$search}%");
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }else{
+            return []; 
+        }
+    }
+
 
 }

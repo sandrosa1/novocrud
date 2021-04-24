@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fatec Crud PHP</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
        
-        <h2>Bloco de anotações</h2>
-        <a href="/">Home</a> | <a href="/notes/criar">Criar bloco</a>  | 
+     
+<!--
+        <img src="<?php echo URL_BASE; ?>images/home.jpg" alt="">
+-->
 
+<nav class= "green">
+    <div class="nav-wrapper container">
+
+      <a href="#" class="brand-logo">Bloco de anotações</a>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        <li><a href="/">Home</a></li>
+
+        <?php if(isset($_SESSION['logado'])): ?>
+
+        <li><a href="/notes/criar">Criar bloco</a></li>
+        <li><a href="/users/cadastrar"> Cadastrar usuario </a></li>
+
+        <?php endif; ?>
         <?php if(!isset($_SESSION['logado'])): ?>
         
-            <a href="/home/login">Login</a> 
+        <li><a href="/home/login"> Login </a></li> 
 
         <?php else: ?>
         Olá <?php echo $_SESSION['userNome']; ?>
-            <a href="/home/logout">Logout</a> 
+
+        <li><a href="/home/logout"> Logout </a></li> 
 
         <?php endif; ?>
+      </ul>
+    </div>
+</nav>
+         
+        
+        
+
+        
+
+        
 
 
         <?php require_once '../App/views/'.$view.'.php'; ?>
