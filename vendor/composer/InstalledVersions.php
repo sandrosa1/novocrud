@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'd1cd8f8973608761384e543f9dfbe1d766fc6f7e',
+    'reference' => 'f4e7abcd3641fb386876641c8916f052e5d72dae',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'd1cd8f8973608761384e543f9dfbe1d766fc6f7e',
+      'reference' => 'f4e7abcd3641fb386876641c8916f052e5d72dae',
+    ),
+    'codeguy/upload' => 
+    array (
+      'pretty_version' => '1.3.2',
+      'version' => '1.3.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6a9e5e1fb58d65346d0e557db2d46fb25efd3e37',
     ),
     'dompdf/dompdf' => 
     array (

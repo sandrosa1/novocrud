@@ -7,6 +7,7 @@ class Note extends Model{
 
         public $titulo;
         public $texto;
+        public $imagem;
 
     /**
      * Método que traz os dados do banco se  houver
@@ -50,10 +51,11 @@ class Note extends Model{
 
     public function save(){
 
-        $sql = "INSERT INTO notes (titulo, texto) VALUES (?,?)";
+        $sql = "INSERT INTO notes (titulo, texto, imagem) VALUES (?,?,?)";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->titulo);
         $stmt->bindValue(2, $this->texto);
+        $stmt->bindValue(3, $this->imagem);
 
         if($stmt->execute())
         {
@@ -85,7 +87,56 @@ class Note extends Model{
 
     }
 
+    public function updateImagem($id){
+
+        $sql = "UPDATE notes SET titulo = ? , texto = ? , imagem = ? WHERE id = ?";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $this->titulo);
+        $stmt->bindValue(2, $this->texto);
+        $stmt->bindValue(3, $this->imagem);
+        $stmt->bindValue(4, $id);
+
+        if($stmt->execute())
+        {
+            return "Atualizado com sucesso!";
+        }
+        else
+        {
+            return "Erro ao atualizar.";
+        }
+
+
+    }
+
+    public function deleteImage($id){
+
+        $sql = "UPDATE notes SET imagem = ?  WHERE id = ?";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, "");
+        $stmt->bindValue(2, $id);
+
+        if($stmt->execute())
+        {
+            return "Imagem deletada com sucesso!";
+        }
+        else
+        {
+            return "Erro ao deletar imagem.";
+        }
+
+
+    }
+
     public function delete($id){
+
+
+        $resultado = $this->findId($id);
+      
+        if(!empty($resultado['imagem'])) {
+            unlink("uploads/".$resultado['imagem']);
+
+        }
+      
 
         $sql = "DELETE FROM notes WHERE id = ?";
         $stmt = Model::getConn()->prepare($sql);

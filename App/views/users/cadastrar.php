@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Cadastrar Usuarios</h1>
+<h3 class="light">Cadastrar Usuarios</h3>
 
 <?php if(!empty($data['mensagem'])){
     

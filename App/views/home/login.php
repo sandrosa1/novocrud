@@ -1,7 +1,7 @@
 <br>
 
 <div class="row container">
-<h1> Fazer Login </h1>
+<h3 class="light"> Fazer Login </h3>
 <?php 
 if(!empty($data['mensagem'])){
     
