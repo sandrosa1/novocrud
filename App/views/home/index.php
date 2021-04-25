@@ -10,14 +10,15 @@
     </div>
   </nav>
 <br>
-<?php 
-if(!empty($data['mensagem'])){
-    
+
+<?php if(!empty($data['mensagem'])){
+    echo "<script>";
     foreach($data['mensagem'] as $m ){
-        echo $m."<br>";
+        echo $m ;
     }
-} 
-?>
+    echo "</script>";
+
+} ?>
 
 <div class="row container">
 

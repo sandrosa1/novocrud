@@ -4,10 +4,12 @@
 <h3 class="light">Editar bloco de anotação</h3>
 
 <?php if(!empty($data['mensagem'])){
-    
+    echo "<script>";
     foreach($data['mensagem'] as $m ){
-        echo $m."<br>";
+        echo $m ;
     }
+    echo "</script>";
+
 } ?>
 
 <form action="/notes/editar/<?php echo $data['registros']['id']; ?>" method="post" enctype="multipart/form-data">

@@ -59,11 +59,11 @@ class Note extends Model{
 
         if($stmt->execute())
         {
-            return "Cadastrado com sucesso!";
+            return "  M.toast({html: ' Cadastrado com sucesso', classes: 'rounded, blue'});";
         }
         else
         {
-            return "Erro ao cadastrar.";
+            return "M.toast({html: 'Erro ao cadastrar imagem!', classes: 'rounded, red'});";
         }
     }
     
@@ -77,11 +77,11 @@ class Note extends Model{
 
         if($stmt->execute())
         {
-            return "Atualizado com sucesso!";
+            return " M.toast({html: 'Atualizado com sucesso', classes: 'rounded, blue'});";
         }
         else
         {
-            return "Erro ao atualizar.";
+            return "M.toast({html: 'Erro ao atualizar!', classes: 'rounded, red'});";
         }
 
 
@@ -98,11 +98,11 @@ class Note extends Model{
 
         if($stmt->execute())
         {
-            return "Atualizado com sucesso!";
+            return "M.toast({html: 'Imagem atualizada com sucesso', classes: 'rounded, blue'});";
         }
         else
         {
-            return "Erro ao atualizar.";
+            return "M.toast({html: 'Erro ao atualizar imagem!', classes: 'rounded, red'});";
         }
 
 
@@ -117,13 +117,12 @@ class Note extends Model{
 
         if($stmt->execute())
         {
-            return "Imagem deletada com sucesso!";
+            return "  M.toast({html: ' Imagem deletada com sucesso', classes: 'rounded, blue'});";
         }
         else
         {
-            return "Erro ao deletar imagem.";
+            return "M.toast({html: 'Erro ao deletar imagem!', classes: 'rounded, red'});";
         }
-
 
     }
 
@@ -144,11 +143,11 @@ class Note extends Model{
 
         if($stmt->execute())
         {
-            return "Excluido com sucesso!";
+            return "  M.toast({html: 'Excluido com sucesso', classes: 'rounded, blue'});";
         }
         else
         {
-            return "Erro ao excluir.";
+            return "M.toast({html: 'Erro ao excluir!', classes: 'rounded, red'});";
         }
     }
 

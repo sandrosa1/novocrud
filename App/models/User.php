@@ -18,11 +18,11 @@ class User extends Model
     
         if($stmt->execute())
         {
-            return "Usuário cadastrado com sucesso!";
+            return "  M.toast({html: 'Usuário cadastrado com sucesso', classes: 'rounded, blue'});";
         }
         else
         {
-            return "Erro ao cadastrar.";
+            return "M.toast({html: 'Erro ao cadastrar usuário!', classes: 'rounded, red'});";
         }
     }
 

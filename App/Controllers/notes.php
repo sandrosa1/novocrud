@@ -81,7 +81,7 @@ class Notes extends Controller {
                 try {
                     // Success!
                     $file->upload();
-                    $mensagem[] = "Upload realizado com sucesso!";
+                    $mensagem[] = "M.toast({html: 'Upload realizado com sucesso', classes: 'rounded, blue'});";
                     $note = $this->model('Note');
                     $note->titulo =  $_POST['titulo'];
                     $note->texto  =  $_POST['texto'];
@@ -172,7 +172,7 @@ class Notes extends Controller {
              try {
                  // Success!
                  $file->upload();
-                 $mensagem[] = "Upload realizado com sucesso!";
+                 $mensagem[] = "M.toast({html: 'Upload realizado com sucesso', classes: 'rounded, blue'});";
                  $note = $this->model('Note');
                  $note->titulo =  $_POST['titulo'];
                  $note->texto  =  $_POST['texto'];

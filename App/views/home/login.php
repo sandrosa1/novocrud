@@ -2,14 +2,16 @@
 
 <div class="row container">
 <h3 class="light"> Fazer Login </h3>
-<?php 
-if(!empty($data['mensagem'])){
-    
+
+<?php if(!empty($data['mensagem'])){
+    echo "<script>";
     foreach($data['mensagem'] as $m ){
-        echo $m."<br>";
+        echo $m ;
     }
-} 
-?>
+    echo "</script>";
+
+} ?>
+
 
 <form action="/home/login" method="post">
 <div class="row">

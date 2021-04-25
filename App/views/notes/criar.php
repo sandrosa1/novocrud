@@ -3,10 +3,12 @@
 <h3 class="light">Criar bloco de anotação</h3>
 
 <?php if(!empty($data['mensagem'])){
-    
+    echo "<script>";
     foreach($data['mensagem'] as $m ){
-        echo $m."<br>";
+        echo $m ;
     }
+    echo "</script>";
+
 } ?>
 
 <form action="/notes/criar" method="post" enctype="multipart/form-data">

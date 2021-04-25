@@ -21,10 +21,10 @@ class Auth{
                header('Location: /home/index');
 
            }else{
-               return "Senha ou email inválidos";
+               return "M.toast({html: 'Senha ou email inválidos', classes: 'rounded, red'});";
            }
         }else{
-            return "Senha ou email inválidos";
+            return "M.toast({html: 'Senha ou email inválidos', classes: 'rounded, red'});";
         }
 
     }

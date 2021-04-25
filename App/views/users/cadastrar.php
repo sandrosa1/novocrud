@@ -2,10 +2,12 @@
 <h3 class="light">Cadastrar Usuarios</h3>
 
 <?php if(!empty($data['mensagem'])){
-    
+    echo "<script>";
     foreach($data['mensagem'] as $m ){
-        echo $m."<br>";
+        echo $m ;
     }
+    echo "</script>";
+
 } ?>
 
 <form action="/users/cadastrar" method="post">
