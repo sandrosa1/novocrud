@@ -11,6 +11,8 @@
   </nav>
 <br>
 
+
+
 <?php if(!empty($data['mensagem'])){
     echo "<script>";
     foreach($data['mensagem'] as $m ){
@@ -40,7 +42,7 @@ if(empty($pagination->result($var))){
 
 
 <?php
-
+//var_dump($_SESSION['level']);
 foreach($pagination->result($var) as $note): ?>
 
 <div class="row">
@@ -49,9 +51,25 @@ foreach($pagination->result($var) as $note): ?>
 <p><?php echo $note['texto']; ?></p> <br>
 
 <?php if(isset($_SESSION['logado'])): ?>
+
+<!-- Modal Structure -->
+<div id="confirmacaoDoModol-<?php echo $note['id']; ?>" class="modal">
+    <div class="modal-content">
+      <h4>Confirmação</h4>
+      <p>Está ação é irreversivel</p>
+      <p>Está certo disto?</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat blue">Cancelar</a>
+      <a class="waves-effect waves-light btn red" href="/notes/excluir/<?php echo $note['id']; ?>">Excluir</a>  
+    </div>
+  </div>
+
 <a class="waves-effect waves-light btn blue" href="/notes/editar/<?php echo $note['id']; ?>">Atualizar</a>  
 
-<a class="waves-effect waves-light btn red" href="/notes/excluir/<?php echo $note['id']; ?>">Exlcuir</a>  <br>
+  <!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger red" href="#confirmacaoDoModol-<?php echo $note['id']; ?>">Excluir</a>
+
 <?php endif; ?>
 
 </div>

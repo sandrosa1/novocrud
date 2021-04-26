@@ -19,6 +19,8 @@ class Auth{
                $_SESSION['userNome'] = $resultado['nome'];
                $_SESSION['level'] = $resultado['level'];
 
+               
+
 
                header('Location: /home/index');
 
@@ -50,9 +52,9 @@ class Auth{
 
     public static function checkLoginAdmin() {
 
-        if(!isset($_SESSION['level']) != 2 ){
+        if($_SESSION['level'] != 2 ){
 
-            header('Location: /home/login');
+            header('Location: /notes/criar');
             die;
 
         }
