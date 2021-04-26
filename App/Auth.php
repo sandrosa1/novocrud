@@ -17,6 +17,8 @@ class Auth{
                $_SESSION['logado'] = true;
                $_SESSION['userId'] = $resultado['id'];
                $_SESSION['userNome'] = $resultado['nome'];
+               $_SESSION['level'] = $resultado['level'];
+
 
                header('Location: /home/index');
 
@@ -39,6 +41,16 @@ class Auth{
     public static function checkLogin() {
 
         if(!isset($_SESSION['logado'])){
+
+            header('Location: /home/login');
+            die;
+
+        }
+    }
+
+    public static function checkLoginAdmin() {
+
+        if(!isset($_SESSION['level']) != 2 ){
 
             header('Location: /home/login');
             die;
