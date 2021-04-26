@@ -48,7 +48,8 @@ foreach($pagination->result($var) as $note): ?>
 <div class="row">
 <img style="float:left; margin: 0 15px  15px 0" src="<?php URL_BASE; ?>/uploads/<?php echo $note['imagem']; ?> " width="120" alt="Imagem" >
 <h3 class="light"> <a href="/notes/ver/<?php echo $note['id']; ?>"> <?php echo $note['titulo']; ?> </a> </h3>
-<p><?php echo $note['texto']; ?></p> <br>
+<p><?php echo $note['texto']; ?></p>
+<p>Coméntario de <?php echo $note['nome']; ?></p> 
 
 <?php if(isset($_SESSION['logado'])): ?>
 
