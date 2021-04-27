@@ -6,15 +6,17 @@ class User extends Model
     public $nome;
     public $email;
     public $senha;
+    public $imagemUsuario;
 
 
     public function save(){
 
-        $sql = "INSERT INTO users (nome, email, senha) VALUES (?,?,?)";
+        $sql = "INSERT INTO users (nome, email, senha, imagemUsuario) VALUES (?,?,?,?)";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->nome);
         $stmt->bindValue(2, $this->email);
         $stmt->bindValue(3, $this->senha);
+        $stmt->bindValue(4, $this->imagemUsuario);
     
         if($stmt->execute())
         {

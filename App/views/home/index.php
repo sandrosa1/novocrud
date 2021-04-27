@@ -46,9 +46,13 @@ if(empty($pagination->result($var))){
 foreach($pagination->result($var) as $note): ?>
 
 <div class="row">
+<div class="col s8">
 <img style="float:left; margin: 0 15px  15px 0" src="<?php URL_BASE; ?>/uploads/<?php echo $note['imagem']; ?> " width="120" alt="Imagem" >
 <h3 class="light"> <a href="/notes/ver/<?php echo $note['id']; ?>"> <?php echo $note['titulo']; ?> </a> </h3>
 <p><?php echo $note['texto']; ?></p>
+</div>
+<div class="col s4">
+<img style="float:left; margin: 0 15px  15px 0;bottom: 0;" src="<?php URL_BASE; ?>/imagemUsuarios/<?php echo $note['imagemUsuario']; ?> " width="50" alt="Imagem" >
 <p>Coméntario de <?php echo $note['nome']; ?></p> 
 
 <?php if(isset($_SESSION['logado'])): ?>
@@ -72,7 +76,7 @@ foreach($pagination->result($var) as $note): ?>
 <a class="waves-effect waves-light btn modal-trigger red" href="#confirmacaoDoModol-<?php echo $note['id']; ?>">Excluir</a>
 
 <?php endif; ?>
-
+</div>
 </div>
 <?php endforeach; ?>
 

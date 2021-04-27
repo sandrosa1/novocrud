@@ -43,6 +43,7 @@ class Notes extends Controller {
             }elseif(empty($_POST['texto'])){
                 $mensagem[] = "O campo texto não pode estar vazio";
 
+
             }else{
 
                 //Upload
@@ -86,6 +87,7 @@ class Notes extends Controller {
                     $note->titulo =  $_POST['titulo'];
                     $note->texto  =  $_POST['texto'];
                     $note->imagem  = $data['name'];
+                    $note->id_user  =$_SESSION['userId'];
 
                     $mensagem[] = $note->save();
                     

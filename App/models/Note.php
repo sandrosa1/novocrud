@@ -16,7 +16,8 @@ class Note extends Model{
      */
     public function getAll(){
 
-        $sql = 'SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome FROM notes INNER JOIN users ON notes.id_user = users.id';
+        //$sql = 'SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome FROM notes INNER JOIN users ON notes.id_user = users.id';
+        $sql = 'SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome, users.imagemUsuario FROM notes INNER JOIN users ON notes.id_user = users.id';
         $stmt = Model::getConn()->prepare($sql);
         $stmt->execute();
 
@@ -51,11 +52,12 @@ class Note extends Model{
 
     public function save(){
 
-        $sql = "INSERT INTO notes (titulo, texto, imagem) VALUES (?,?,?)";
+        $sql = "INSERT INTO notes (titulo, texto, imagem, id_user) VALUES (?,?,?,?)";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->titulo);
         $stmt->bindValue(2, $this->texto);
         $stmt->bindValue(3, $this->imagem);
+        $stmt->bindValue(4, $this->id_user);
 
         if($stmt->execute())
         {
