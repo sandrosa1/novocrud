@@ -17,7 +17,7 @@ class Note extends Model{
     public function getAll(){
 
         //$sql = 'SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome FROM notes INNER JOIN users ON notes.id_user = users.id';
-        $sql = 'SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome, users.imagemUsuario FROM notes INNER JOIN users ON notes.id_user = users.id';
+        $sql = 'SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome, users.imagemUsuario FROM notes INNER JOIN users ON notes.id_user = users.id ORDER BY notes.id DESC';
         $stmt = Model::getConn()->prepare($sql);
         $stmt->execute();
 
@@ -155,7 +155,8 @@ class Note extends Model{
 
     public function search($search){
 
-        $sql = "SELECT * FROM notes WHERE titulo LIKE  ? COLLATE utf8_general_ci";
+        $sql = "SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome, users.imagemUsuario FROM notes INNER JOIN users ON notes.id_user = users.id WHERE titulo LIKE  ? COLLATE utf8_general_ci";
+        //$sql = "SELECT * FROM notes WHERE titulo LIKE  ? COLLATE utf8_general_ci";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, "%{$search}%");
         $stmt->execute();

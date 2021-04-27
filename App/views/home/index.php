@@ -42,7 +42,7 @@ if(empty($pagination->result($var))){
 
 
 <?php
-//var_dump($_SESSION['level']);
+
 foreach($pagination->result($var) as $note): ?>
 
 <div class="row">
@@ -55,7 +55,7 @@ foreach($pagination->result($var) as $note): ?>
 <img style="float:left; margin: 0 15px  15px 0;bottom: 0;" src="<?php URL_BASE; ?>/imagemUsuarios/<?php echo $note['imagemUsuario']; ?> " width="50" alt="Imagem" >
 <p>Coméntario de <?php echo $note['nome']; ?></p> 
 
-<?php if(isset($_SESSION['logado'])): ?>
+<?php if((isset($_SESSION['logado']) AND ($_SESSION['userNome'] == $note['nome'] )) or $_SESSION['level'] == 2 ): ?>
 
 <!-- Modal Structure -->
 <div id="confirmacaoDoModol-<?php echo $note['id']; ?>" class="modal">

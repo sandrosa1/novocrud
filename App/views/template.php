@@ -15,23 +15,19 @@
 </head>
 <body>
        
-     
-<!--
-        <img src="<?php echo URL_BASE; ?>images/home.jpg" alt="">
--->
 
 <nav class= "green">
     <div class="nav-wrapper container">
 
-      <a href="#" class="brand-logo">Bloco de anotações</a>
+      <a href="#" class="brand-logo">Heróis</a>
 
     <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-        <li><a href="/">Home</a></li>
+        <li><a href="/"> Home </a></li>
 
         <?php if(isset($_SESSION['logado'])): ?>
 
-        <li><a href="/notes/criar">Criar bloco</a></li>
+        <li><a href="/notes/criar"> Criar bloco </a></li>
         <li><a href="/users/cadastrar"> Cadastrar usuario </a></li>
 
         <?php endif; ?>
@@ -50,12 +46,6 @@
 </nav>
          
         
-        
-
-        
-
-        
-
 
 <?php require_once '../App/views/'.$view.'.php'; ?>
 

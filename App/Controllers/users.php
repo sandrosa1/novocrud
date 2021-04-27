@@ -9,6 +9,7 @@ class Users extends Controller
     public function cadastrar(){
         
         Auth::checkLogin();
+        Auth::checkLoginAdmin();
 
         $mensagem = array();
 
