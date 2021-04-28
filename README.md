@@ -39,9 +39,9 @@
   
 
    - Implementação do ambiente de desevolvimento host apontado para pasta public
-   <p align="center">
- <a href="https://hcode.com.br/blog/como-configurar-apache-virtual-hosts-no-linux-ubuntu">Ambiente linux</a> •
- <a href="https://www.visualdicas.com.br/index.php/tools/web-server/4-como-alterar-um-servidor-virtual-wamp-server">Ambiente Windows/wamp</a>  
+<p>
+ •• <a href="https://hcode.com.br/blog/como-configurar-apache-virtual-hosts-no-linux-ubuntu">Ambiente linux</a> •••
+ <a href="https://www.visualdicas.com.br/index.php/tools/web-server/4-como-alterar-um-servidor-virtual-wamp-server">Ambiente Windows/wamp</a> •• 
 </p>
 
   
@@ -51,4 +51,4 @@
 
     - php -S localhost:8080
 
-    Abra o navegador no msm endereço. localhost:8080
+    - Abra o navegador no msm endereço. localhost:8080
