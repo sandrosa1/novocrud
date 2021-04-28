@@ -35,9 +35,9 @@
 
    - Implementação do ambiente host apontado para pasta public
 
-    -[Ambiente para linux](https://hcode.com.br/blog/como-configurar-apache-virtual-hosts-no-linux-ubuntu)
+    -[linux](https://hcode.com.br/blog/como-configurar-apache-virtual-hosts-no-linux-ubuntu)
 
-    -[Ambiente para windows/wamp](https://www.visualdicas.com.br/index.php/tools/web-server/4-como-alterar-um-servidor-virtual-wamp-server)
+    -[windows/wamp](https://www.visualdicas.com.br/index.php/tools/web-server/4-como-alterar-um-servidor-virtual-wamp-server)
 
   - Solução alternativa
     
