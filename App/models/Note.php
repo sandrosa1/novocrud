@@ -1,12 +1,24 @@
 <?php
 use App\Core\Model;
 /**
- * Class responsável pelo crud
+ * Class responsável pelo crud do comentário
  */
 class Note extends Model{
-
+        /**
+         * Titulo do comentário
+         *
+         * @var string
+         */    
         public $titulo;
+
+        /**
+         * Texto do comentário
+         *
+         * @var string
+         */
         public $texto;
+
+
         public $imagem;
 
     /**
@@ -28,6 +40,7 @@ class Note extends Model{
             return []; 
         }
     }
+
     /**
      * Método que busca o id selecionado no Banco
      *
@@ -50,6 +63,11 @@ class Note extends Model{
     }
 
 
+    /**
+     * Método que salva os dados do comentário no banco
+     *
+     * @return string
+     */
     public function save(){
 
         $sql = "INSERT INTO notes (titulo, texto, imagem, id_user) VALUES (?,?,?,?)";
@@ -89,6 +107,12 @@ class Note extends Model{
 
     }
 
+    /**
+     * Método que atualiza a imagem no banco
+     *
+     * @param string $id
+     * @return string
+     */
     public function updateImagem($id){
 
         $sql = "UPDATE notes SET titulo = ? , texto = ? , imagem = ? WHERE id = ?";
@@ -110,6 +134,12 @@ class Note extends Model{
 
     }
 
+    /**
+     * Método que deleta a imagem no banco
+     *
+     * @param string $id
+     * @return string
+     */
     public function deleteImage($id){
 
         $sql = "UPDATE notes SET imagem = ?  WHERE id = ?";
@@ -128,6 +158,12 @@ class Note extends Model{
 
     }
 
+    /**
+     * Método que deleta um comentário no banco
+     *
+     * @param string $id
+     * @return string
+     */
     public function delete($id){
 
 
@@ -138,7 +174,6 @@ class Note extends Model{
 
         }
       
-
         $sql = "DELETE FROM notes WHERE id = ?";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -153,6 +188,12 @@ class Note extends Model{
         }
     }
 
+    /**
+     * Método de pesquisa
+     *
+     * @param string $search
+     * @return string
+     */
     public function search($search){
 
         $sql = "SELECT notes.id, notes.titulo, notes.texto, notes.imagem, users.nome, users.imagemUsuario FROM notes INNER JOIN users ON notes.id_user = users.id WHERE titulo LIKE  ? COLLATE utf8_general_ci";

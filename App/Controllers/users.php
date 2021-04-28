@@ -3,9 +3,17 @@
 use \App\Core\Controller;
 use \App\Auth;
 
+/**
+ * Classe de controle para usuarios
+ */
 class Users extends Controller
 {
     
+    /**
+     * Método de cadastro de usuário
+     *
+     * @return void
+     */
     public function cadastrar(){
         
         Auth::checkLogin();
@@ -73,11 +81,8 @@ class Users extends Controller
                     $errors = $file->getErrors();
                     $mensagem[] = implode("<br>", $errors) ;
 
-
                 }
 
-
-                
             }
             
         }

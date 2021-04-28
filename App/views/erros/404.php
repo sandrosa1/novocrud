@@ -1,1 +1,6 @@
-<h2>Página não encontrada.<h2>
+
+<div class="container" >
+
+    <h2 class="text-center" >Página não encontrada.<h2>
+
+</div>

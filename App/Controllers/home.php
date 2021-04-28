@@ -3,6 +3,9 @@
 use App\Core\Controller;
 use App\Auth;
 
+/**
+ * Classe responsável pelo controle da home
+ */
 class Home extends Controller {
 
     /**
@@ -22,7 +25,11 @@ class Home extends Controller {
         $this->view('home/index',$dados = ['registros' => $dados]);
 
     }
-
+    /**
+     * Método responsável pela barra de pesquisa
+     *
+     * @return void
+     */
     public function buscar(){
 
         $busca = isset($_POST['search']) ? $_POST['search'] : $_SESSION['search'];
@@ -36,7 +43,11 @@ class Home extends Controller {
     }
 
 
-
+    /**
+     * Método responsável pelo login
+     *
+     * @return void
+     */
     public function login(){
 
         $mensagem = array();

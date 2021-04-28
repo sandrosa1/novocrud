@@ -2,16 +2,38 @@
 
 namespace App\Core;
 
+
+/**
+ * Classe para rotas e URLs
+ */
 class App {
 
+    /**
+     * Recebe a classe
+     *
+     * @var string
+     */
     protected $controller  = 'home';
+
+    /**
+     * Recebe o método
+     *
+     * @var string
+     */
     protected $method      = 'index';
+
+    /**
+     * Recebe os parametros
+     *
+     * @var array
+     */
     protected $params      = [];
 
     /**
-     * Responsavel pela criação das rotas e URL amigaveis
+     * Contrutor Responsavel pela criação das rotas e URL amigaveis
      */
     function __construct(){
+        
         $url = $this->parseURL();
         //print_r($url);
 
@@ -21,14 +43,17 @@ class App {
         if(file_exists('../App/Controllers/'.$url[1].'.php')){
             $this->controller = $url[1];
             unset($url[1]);
+
         }elseif(empty($url[1])){
             $this->controller = 'home';
+
         }else{
             $this->controller = 'erro404';
 
         }
 
         require_once '../App/Controllers/'.$this->controller.'.php';
+
         $this->controller = new $this->controller;
 
         /**

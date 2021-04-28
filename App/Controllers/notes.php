@@ -3,6 +3,9 @@
 use \App\Core\Controller;
 use \App\Auth;
 
+/**
+ * Classe de controle de comentários
+ */
 class Notes extends Controller {
 
     /**
@@ -22,7 +25,7 @@ class Notes extends Controller {
     }
 
     /**
-     * Método responsavel pela capiturar os dados do bloco de anotação
+     * Método responsavel pela capiturar os dados do bloco de anotação e eviar para model DB
      *
      * @return void
      */
@@ -51,24 +54,24 @@ class Notes extends Controller {
                 $storage = new \Upload\Storage\FileSystem('uploads');
                 $file = new \Upload\File('foo', $storage);
 
-                // Optionally you can rename the file on upload
+                // Opcionalmente, você pode renomear o arquivo no upload
                 $new_filename = uniqid();
                 $file->setName($new_filename);
 
                 // Validate file upload
-                // MimeType List => http://www.iana.org/assignments/media-types/media-types.xhtml
+                // Lista MimeType => http://www.iana.org/assignments/media-types/media-types.xhtml
                 $file->addValidations(array(
-                    // Ensure file is of type "image/png"
+                    // Certifique-se de que o arquivo seja do tipo  "image/png"
                     //new \Upload\Validation\Mimetype('image/png'),
 
-                    //You can also add multi mimetype validation
+                    //Você também pode adicionar validação multi-mimetype
                     new \Upload\Validation\Mimetype(array('image/png','image/jpeg','image/gif')),
 
-                    // Ensure file is no larger than 5M (use "B", "K", M", or "G")
+                    // Certifique-se de que o arquivo não seja maior que 5M (use "B", "K", M", or "G")
                     new \Upload\Validation\Size('5M')
                 ));
 
-                // Access data about the file that has been uploaded
+                // Acesse os dados sobre o arquivo que foi carregado
                 $data = array(
                     'name'       => $file->getNameWithExtension(),
                     'extension'  => $file->getExtension(),
@@ -78,7 +81,7 @@ class Notes extends Controller {
                     'dimensions' => $file->getDimensions()
                 );
 
-                // Try to upload file
+                // Try para diretório upload 
                 try {
                     // Success!
                     $file->upload();
@@ -107,7 +110,12 @@ class Notes extends Controller {
     }
 
 
-
+    /**
+     * Método responsavel pela edição do bloco e envio para model DB
+     *
+     * @param string $id
+     * @return void
+     */
     public function editar($id){
 
         Auth::checkLogin();
@@ -203,7 +211,7 @@ class Notes extends Controller {
     }
 
     /**
-     * Método reponsável por excluir
+     * Método reponsável por excluir um bloco de comentário
      *
      * @param string $id
      * @return void
@@ -224,8 +232,5 @@ class Notes extends Controller {
 
 
     }
-
-
-
 
 }

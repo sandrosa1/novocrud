@@ -1,7 +1,7 @@
 <?php
 namespace App\Core;
 /**
- * Controlher base todos os outros controlhers herdam desse classe
+ * Controlher base. Todos os outros controlhers herdam desse classe
  */
 class Controller{
 
