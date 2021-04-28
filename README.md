@@ -6,7 +6,7 @@
 
 - [x] Bloco de comentários
 - [x] Uploads e exclusão de imagens
-- [x] Super usuario
+- [x] Super usuário
 - [x] Controle de usuários 
 - [x] URL amigável 
 - [x] POO
