@@ -41,7 +41,7 @@
 
   - Solução alternativa
     
-    Utilizar servidor embutido do PHP dentro do diretorio public, no terminal ou cmd utilize o comando com a porta desejada:
+    Utilizar servidor embutido do PHP dentro do diretório public, no terminal ou cmd utilize o comando com a porta desejada:
 
     - php -S localhost:8080
 
