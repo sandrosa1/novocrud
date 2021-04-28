@@ -39,12 +39,12 @@
   
 
    - Implementação do ambiente de desevolvimento host apontado para pasta public
+   <p align="center">
+ <a href="https://hcode.com.br/blog/como-configurar-apache-virtual-hosts-no-linux-ubuntu">Ambiente linux</a> •
+ <a href="https://www.visualdicas.com.br/index.php/tools/web-server/4-como-alterar-um-servidor-virtual-wamp-server">Ambiente Windows/wamp</a>  
+</p>
 
-    - [linux](https://hcode.com.br/blog/como-configurar-apache-virtual-hosts-no-linux-ubuntu/)
-
-
-    - [windows/wamp](https://www.visualdicas.com.br/index.php/tools/web-server/4-como-alterar-um-servidor-virtual-wamp-server/)
-
+  
   - Solução alternativa
     
     Utilizar servidor embutido do PHP dentro do diretório public, no terminal ou cmd utilize o comando com a porta desejada:
