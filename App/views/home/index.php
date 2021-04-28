@@ -1,5 +1,5 @@
 <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper blue">
       <form method="post" action="/home/buscar">
         <div class="input-field">
           <input id="search" type="search" name="search" required>
