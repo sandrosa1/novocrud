@@ -9,13 +9,13 @@
 - Controle de usuários 
 
 
-\* ![Autocomplete/card](https://github.com/sandrosa1/api-fatec/blob/main/public/projeto.gif)
+\* ![Projeto](https://github.com/sandrosa1/novocrud/blob/main/public/images/crud.gif)
 
 
 
 ## Padrão MVC
 
-  ![Autocomplete/card](https://github.com/sandrosa1/api-fatec/blob/main/public/fluxodedados.png)
+  ![MVC](https://github.com/sandrosa1/novocrud/blob/main/public/images/MVC.png)
 
 ## Checklist
 
