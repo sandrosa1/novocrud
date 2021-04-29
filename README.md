@@ -9,6 +9,7 @@
 - [x] Super usuário
 - [x] Controle de usuários 
 - [x] URL amigável 
+- [x] Template
 - [x] POO
 - [ ] Comentário anônimo
 
