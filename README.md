@@ -10,6 +10,7 @@
 - [x] Controle de usuários 
 - [x] URL amigável 
 - [x] Template
+- [x] RDS
 - [x] POO
 - [ ] Comentário anônimo
 
